@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ExpenseTracker</string>
+    <string name="expense_title">Expense Title</string>
+    <string name="default_amount">$0.00</string>
+    <string name="default_date">01/01/2024</string>
+    <string name="fab_add_expense_description">Add a new expense</string>
+
+
 </resources>

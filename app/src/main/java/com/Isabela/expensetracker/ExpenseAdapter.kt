@@ -1,3 +1,5 @@
+package com.Isabela.expensetracker
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class ExpenseAdapter(private val expenses: List<Expense>) :
     RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
 
+    // ViewHolder interno para enlazar los elementos de la vista
     inner class ExpenseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.textTitle)
         val amount: TextView = view.findViewById(R.id.textAmount)
@@ -22,7 +25,7 @@ class ExpenseAdapter(private val expenses: List<Expense>) :
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
         val expense = expenses[position]
         holder.title.text = expense.title
-        holder.amount.text = "$${expense.amount}"
+        holder.amount.text = holder.itemView.context.getString(R.string.expense_amount, expense.amount)
         holder.date.text = expense.date
     }
 
